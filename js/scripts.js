@@ -1,19 +1,32 @@
-// BUSINESS logic
+// USER INTERFACE logic
 $(document).ready(function() {
   $("form#leap-year").submit(function(event) {
     event.preventDefault();
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
-    $("#result").text(result);
+
+    $(".year").text(year);
+
+    if (!result) {
+       $(".not").text("not");
+     } else {
+       $(".not").text("");
+     }
+
+     $("#result").show();
+
+ 
+     // same as writing if ( result === false )
+
 
 
 });
 });
-// USER INTERFACE
+// BUSINESS logic
 var leapYear = function(year) {
   if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-      alert("true");
+      return true
     } else {
-      alert("false");
+      return false
 };
 };
