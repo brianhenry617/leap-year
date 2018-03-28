@@ -11,5 +11,9 @@ $(document).ready(function() {
 });
 // USER INTERFACE
 var leapYear = function(year) {
-      return false;
+  if (year % 4 ===0) {
+      alert("true");
+    } else {
+      alert("false");
+};
 };
